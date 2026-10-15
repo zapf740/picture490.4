@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-
+//verallgemeinerung
 int auflosungsbreite=1080;
 int auflosungshohe=1080;
 int blockbreite=8;
@@ -19,13 +19,15 @@ int blockbreite=8;
 // argv → array of arguments
 
 int a=(auflosungsbreite/blockbreite)*(auflosungshohe/blockbreite);
-
+// bei 1080x1080 135x135
 
 uint8_t byteDaten[a];
+
 if(argc > 3){
 printf("\nToo many arguments");
 return -1;
 }
+
 FILE *fp = fopen(argv[1], "rb");
 
 if(fp == NULL){
