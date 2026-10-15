@@ -17,11 +17,13 @@ int blockbreite=8;
 
 // argc → number of arguments
 // argv → array of arguments
-
+// argv1 ist dateiname, argv2 ist ausgabeformat
 int a=(auflosungsbreite/blockbreite)*(auflosungshohe/blockbreite);
-// bei 1080x1080 135x135
+// bei 1080x1080 135x135=a
 
-uint8_t byteDaten[a];
+long dateiLange = size(argv[1]);
+
+uint8_t byteDaten[dateiLange];//genau so lang wie datei
 
 if(argc > 3){
 printf("\nToo many arguments");
@@ -31,15 +33,15 @@ return -1;
 FILE *fp = fopen(argv[1], "rb");
 
 if(fp == NULL){
-printf("\n\nError with %s",argv[1]);
+printf("\n\nfehler mit %s\n",argv[1]);
 perror( argv[1] );
 return 1;
 }
-long dateiLange = size(argv[1]);
+
 
 uint6_t datenArray[dateiLange];
 
-for(long i =0;i<datei;i++){
+for(long i =0;i<dateiLange;i++){
 
 printf("\n\n%d",fread(&byteDaten[i], 1,1, fp));
 
@@ -48,16 +50,22 @@ datenArray[i]=translate(byteDaten[i]);
 printf("\n\n%X %X",byteDaten[i], datenArray[i]);
 }
 
-uint8_t rgbarr[size*3];
+Rgbarray rgbarr[dateiLange/2];
 
 long a = 0;
+
 while(a+1<dateiLange){
-
+rgbarr[a]=rgbarray6(datenArray[a],datenArray[a+1]);
+a++;
 }
+uint6_t nix=0;
 if(a<dateiLange){
-writeToRgb(datenArray[a],000000);
+rgbarr[a]=rgbarray6(datenArray[a],nix);
 }
 
+compress()//zlib
+3bytestoblocks()
+arrToPic(rgbarr,argv[2]);//stb_image_write.h oder stbi_write_func wenn man die werte im ram laden will um es einem wrapper zurückzugeben
 
 
 fclose(fp);

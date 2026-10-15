@@ -1,6 +1,8 @@
 #include "size.h"
 #include <stdio.h>
 
+//groesse in bytes
+
 long size(char datei[]){
 FILE *fp = fopen(datei,"rb");
 fseek(fp,0,SEEK_END);
