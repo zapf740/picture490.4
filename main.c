@@ -65,7 +65,7 @@ rgbarr[zahl]=rgbarray6(datenArray[zahl],nix);
 }
 
 //compress()//zlib
-3bytestoblocks(1080,1080,rgbarr);
+3bytestoblocks(8,8,rgbarr,a);//8x8 block von rgbarray zu einem einzigen array mit rgb daten mit block
 //arrToPic(rgbarr,argv[2]);//stb_image_write.h oder stbi_write_func wenn man die werte im ram laden will um es einem wrapper zurückzugeben
 
 

@@ -9,3 +9,15 @@ rgbarray.g=((erst.data&3)<<2)+(zweit.data&48))*16-8+16;//0x30 = 0011 0000 also e
 rgbarray.b=(zweit.data&15)*16-8+16;//15=0000 1111 letzten 4 bits
 return rgbarray;
 }
+
+int[] 3bytestoblocks(int blockbreite,int blockhohe, Rgbarray array, int arraylange){
+
+
+for(int a=0;a<blockhohe;a++){
+for(int i=0;i<arraylange;i++){
+for(int b=0;b<blockbreite;b++){
+
+}
+}
+}
+}
