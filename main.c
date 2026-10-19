@@ -50,22 +50,23 @@ datenArray[i]=translate(byteDaten[i]);
 printf("\n\n%X %X",byteDaten[i], datenArray[i]);
 }
 
-Rgbarray rgbarr[dateiLange/2];
+Rgbarray rgbarr[a];
 
-long a = 0;
+int zahl = 0;
 
-while(a+1<dateiLange){
-rgbarr[a]=rgbarray6(datenArray[a],datenArray[a+1]);
-a++;
+while(zahl+1<a){
+rgbarr[zahl]=rgbarray6(datenArray[zahl],datenArray[zahl+1]);
+zahl++;
 }
+if(zahl<a){
 uint6_t nix=0;
-if(a<dateiLange){
-rgbarr[a]=rgbarray6(datenArray[a],nix);
+
+rgbarr[zahl]=rgbarray6(datenArray[zahl],nix);
 }
 
-compress()//zlib
-3bytestoblocks()
-arrToPic(rgbarr,argv[2]);//stb_image_write.h oder stbi_write_func wenn man die werte im ram laden will um es einem wrapper zurückzugeben
+//compress()//zlib
+3bytestoblocks(1080,1080,rgbarr);
+//arrToPic(rgbarr,argv[2]);//stb_image_write.h oder stbi_write_func wenn man die werte im ram laden will um es einem wrapper zurückzugeben
 
 
 fclose(fp);
