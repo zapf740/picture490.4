@@ -11,5 +11,6 @@ uint8_t b;
 
 
 Rgbarray rgbarray6(uint6_t erst, uint6_t zweit);
+void dreibytestoblocks(int blockbreite,int blockhohe, Rgbarray* array, int arraybreite,int arrayhohe, uint8_t *neuarray);
 
 #endif
