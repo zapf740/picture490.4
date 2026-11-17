@@ -66,12 +66,12 @@ datenArray[i]=translate(byteDaten[i]);
 while(2*zahl+1<a*2&& 2*zahl+1<dateiLange){
 rgbarr[zahl]=rgbarray6(datenArray[2*zahl],datenArray[2*zahl+1]);
 zahl++;
-printf("\nrgbarr %d: r: %d g: %d b: %d\n",zahl, rgbarr[zahl-1].r,rgbarr[zahl-1].g,rgbarr[zahl-1].b);
+//printf("\nrgbarr %d: r: %d g: %d b: %d\n",zahl, rgbarr[zahl-1].r,rgbarr[zahl-1].g,rgbarr[zahl-1].b);
 }
 if(zahl<a&&zahl<dateiLange){
 rgbarr[zahl]=rgbarray6(datenArray[zahl],null);
 zahl++;
-printf("\nrgbarr %d: r: %d g: %d b: %d\n",zahl, rgbarr[zahl-1].r,rgbarr[zahl-1].g,rgbarr[zahl-1].b);
+//printf("\nrgbarr %d: r: %d g: %d b: %d\n",zahl, rgbarr[zahl-1].r,rgbarr[zahl-1].g,rgbarr[zahl-1].b);
 
 }
 while (zahl< a) {

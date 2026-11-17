@@ -4,17 +4,12 @@
 #include <stdio.h>
 
 uint6_t translate(uint8_t file){
-
+//turning the most used characters into 6 bits from utf 8 and giving up on 192 characters
 uint6_t final;
 
-if(file>=48 && file<=57){
-final.data=(file-48);
+if(file>=0x21 && file<=0x5f){
+final.data=(file-33);
 //printf("\nprint1: %X\n",final.data);
-return final;
-}
-if(file>=97&&file<=122){
-final.data=(file-87);
-//printf("\nprint2: %X\n",final.data);
 return final;
 }
 final.data=63;
