@@ -6,7 +6,9 @@
 uint6_t translate(uint8_t file){
 //turning the most used characters into 6 bits from utf 8 and giving up on 192 characters
 uint6_t final;
-
+if(file>=0x61 && file<=0x7a){
+file=file-0x20;
+}
 if(file>=0x21 && file<=0x5f){
 final.data=(file-33);
 //printf("\nprint1: %X\n",final.data);
